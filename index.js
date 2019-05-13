@@ -24,7 +24,7 @@ function build ( config, done ) {
                 }
             },
             config.variables
-            ));
+        ));
 
         // save generated result
         tools.write([{name: config.target, data: data}], log, done);
