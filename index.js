@@ -18,9 +18,13 @@ function build ( config, done ) {
         // prepare function and data
         render = pug.compileFile(config.source, config.options || {});
         data   = render(Object.assign(
-            {get buildTimestamp () { return Date.now(); }},
-            config.variables)
-        );
+            {
+                get buildTimestamp () {
+                    return Date.now();
+                }
+            },
+            config.variables
+            ));
 
         // save generated result
         tools.write([{name: config.target, data: data}], log, done);
