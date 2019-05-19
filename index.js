@@ -31,8 +31,7 @@ function generator ( config, options ) {
     var tasks = {};
 
     // sanitize and extend defaults
-    config = config || {};
-    generator.config = config;
+    generator.config = config = config || {};
     options = Object.assign({}, generator.options, options || {});
 
     tasks[options.prefix + 'config' + options.suffix] = function () {
