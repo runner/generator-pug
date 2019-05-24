@@ -5,16 +5,18 @@
 
 'use strict';
 
-var name  = 'pug',
+const
+    name  = 'pug',
     tools = require('runner-tools'),
     log   = require('runner-logger').wrap(name);
 
 
 function build ( config, done ) {
-    var pug = require('pug'),
-        render, data;
+    const pug = require('pug');
 
     try {
+        let render, data;
+
         // prepare function and data
         render = pug.compileFile(config.source, config.options || {});
         data   = render(config.variables || {});
@@ -28,7 +30,7 @@ function build ( config, done ) {
 
 
 function generator ( config, options ) {
-    var tasks = {};
+    const tasks = {};
 
     // sanitize and extend defaults
     generator.config = config = config || {};

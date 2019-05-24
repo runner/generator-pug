@@ -21,13 +21,13 @@ npm install runner-generator-pug
 Add to the scope:
 
 ```js
-var generator = require('runner-generator-pug');
+const generator = require('runner-generator-pug');
 ```
 
 Generate tasks according to the given config:
 
 ```js
-var tasks = generator({
+const tasks = generator({
     source: 'src/pug/main.pug',
     target: 'build/develop/index.html',
     variables: {
@@ -40,7 +40,7 @@ var tasks = generator({
 Add generated tasks to the `runner` instance:
 
 ```js
-var runner = require('runner');
+const runner = require('runner');
 
 Object.assign(runner.tasks, tasks);
 ```
